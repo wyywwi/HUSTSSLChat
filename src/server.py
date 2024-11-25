@@ -46,7 +46,7 @@ def handle_client(conn, addr):
             # 提示服务器是否接受聊天请求
             accept = input(f"Client '{client_name}' wants to chat. Accept? (y/n): ").strip().lower()
             if accept == 'y':
-                ssl_conn.send(f"ACCEPT|{client_name}".encode())
+                ssl_conn.send(f"ACCEPT|{server_name}".encode())
                 current_state = CHAT
                 current_conn = ssl_conn
                 current_client_name = client_name

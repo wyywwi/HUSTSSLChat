@@ -7,10 +7,15 @@ chat_logs/*
 !chat_logs/.gitkeep
 
 # 证书和密钥文件
-certs/**/*.crt
-certs/**/*.key
-certs/**/*.csr
-certs/**/*.srl
+certs/client/*.crt
+certs/client/*.key
+certs/client/*.csr
+certs/client/*.srl
+
+certs/server/*.crt
+certs/server/*.key
+certs/server/*.csr
+certs/server/*.srl
 
 # 保留 CA 文件
 !certs/ca/ca.crt

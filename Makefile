@@ -4,7 +4,7 @@ CERTS_DIR = ./certs
 CHAT_LOGS_DIR = ./chat_logs
 DOCKER_NETWORK = hustsslchat_network
 DOCKER_IMAGE = dockerpull.org/python:3.10
-CUSTOM_IMAGE = hustsslchat:latest
+CUSTOM_IMAGE = hustsslchat
 TEMP_CONTAINER = hustsslchat_temp
 PYTHON_REQUIREMENTS = requirements.txt
 TMUX_SESSION = hustsslchat
@@ -80,15 +80,15 @@ setup-docker:
 
 # Docker 环境清理
 clean-docker:
+	# 删除 tmux session
+	tmux kill-session -t hustsslchat
+	
 	# 停止并删除容器
 	docker stop host1 host2 host3 $(TEMP_CONTAINER) || true
 	docker rm host1 host2 host3 $(TEMP_CONTAINER) || true
 
 	# 删除网络
 	docker network rm $(DOCKER_NETWORK) || true
-
-	# 删除自定义镜像
-	docker rmi $(CUSTOM_IMAGE) || true
 
 	@echo "Docker environment cleaned."
 
