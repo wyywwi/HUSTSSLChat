@@ -1,5 +1,4 @@
 from OpenSSL import SSL
-
 from OpenSSL import crypto
 
 def get_common_name(certfile):

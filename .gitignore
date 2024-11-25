@@ -1,0 +1,30 @@
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+
+# 日志文件
+chat_logs/*
+!chat_logs/.gitkeep
+
+# 证书和密钥文件
+certs/**/*.crt
+certs/**/*.key
+certs/**/*.csr
+certs/**/*.srl
+
+# 保留 CA 文件
+!certs/ca/ca.crt
+!certs/ca/ca.key
+
+# 虚拟环境
+venv/
+.env/
+
+# Docker 容器相关
+*.tar
+*.img
+*.iso
+
+# 系统生成文件
+.DS_Store
+Thumbs.db
